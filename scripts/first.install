@@ -2,47 +2,25 @@
 
 echo "Let's install the packages..."
 
-sudo pacman -S fish dunst libnotify hyprland hyprpaper xdg-desktop-portal-hyprland \
-wayland xorg-xwayland cliphist wl-clipboard pipewire pipewire-alsa pipewire-pulse \
-pipewire-jack wireplumber waybar alacritty git pcmanfm-gtk3 file-roller neovim \
-bluez bluez-utils blueman network-manager-applet btop neofetch mpv imv \
-grim slurp ranger exa bat pavucontrol nodejs yarn inxi alsa-tools alsa-utils \
-kvantum gtk-engines gtk-engine-murrine lxappearance brightnessctl polkit-gnome xorg-xhost \
-firefox udisks2 swaylock swayidle libva-utils ttf-opensans noto-fonts-emoji gammastep --noconfirm
+sudo zypper install dunst libnotify hyprland hyprland-devel hyprpaper xdg-desktop-portal-hyprland xwayland \
+wl-clipboard pipewire pipewire-alsa pipewire-pulseaudio pipewire-jack wireplumber waybar alacritty git thunar thunar-archive-plugin \
+file-roller neovim bluez bluez-utils blueman NetworkManager-applet btop neofetch mpv imv grim slurp ranger exa \
+bat pavucontrol nodejs yarn inxi alsa-tools alsa-utils lxappearance brightnessctl polkit-gnome xhost firefox \
+udisks2 swaylock swayidle libva-utils google-opensans-fonts noto-emoji-fonts gammastep rofi-wayland
 
-chsh
+sudo zypper remove lightdm icewm
 
-read -p "en or es?: " lang
-     case $lang in
-        "en")
-            mkdir -p ~/Documents
-            cd ~/Documents
-            git clone https://aur.archlinux.org/paru.git
-            cd paru
-            makepkg -si --noconfirm
-            ;;
-        "es")
-            mkdir -p ~/Documentos
-            cd ~/Documentos
-            git clone https://aur.archlinux.org/paru.git
-            cd paru
-            makepkg -si --noconfirm
-            ;;
-    esac
+## Log In with TTY
+sudo systemctl isolate multi-user.target
+sudo systemctl set-default multi-user.target
 
-cd
-paru -S rofi-lbonn-wayland-git --noconfirm
-systemctl enable --user wireplumber
-systemctl enable --user pipewire
-sudo systemctl enable bluetooth
+sudo zypper install syncthing samba smbclient
+sudo zypper install samba-client gvfs-fuse gvfs-backends
 
 sudo ln -s /usr/bin/rofi /usr/bin/dmenu
 
 echo "HandlePowerKey=ignore" | sudo tee --append /etc/systemd/logind.conf
 sudo systemctl kill -s HUP systemd-logind
-
-./fonts.sh
-./config.sh
 
 echo "QT_STYLE_OVERRIDE=kvantum" | sudo tee --append /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee --append /etc/environment
