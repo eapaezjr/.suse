@@ -1,0 +1,269 @@
+/*
+ ********************************************
+ *░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░*
+ *░░█▀█░█░░░█░█░█▀▀░░░█░█░█░░░▀█▀░█▀▄░█▀█░░*
+ *░░█▀▀░█░░░█░█░▀▀█░░░█░█░█░░░░█░░█▀▄░█▀█░░*
+ *░░▀░░░▀▀▀░▀▀▀░▀▀▀░░░▀▀▀░▀▀▀░░▀░░▀░▀░▀░▀░░*
+ *░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░*
+ ********************************************
+ */
+
+/* PALETTE */
+/*     'background':   '#181818', */
+/*     'background1':  '#2e2e2e', */
+/*     'foreground':   '#f8f8f8', */
+/*     'foreground1':  '#b8b8b8', */
+
+/*     'black':        '#181818', */
+/*     'red':          '#ab4642', */
+/*     'green':        '#a1b56c', */
+/*     'yellow':       '#d7ba7d', */
+/*     'blue':         '#7cafc2', */
+/*     'magenta':      '#ba8baf', */
+/*     'cyan':         '#86c1b9', */
+/*     'white':        '#f8f8f8', */
+
+
+* {
+	border: none;
+	border-radius: 25px;
+	font-family: Ubuntu Nerd Font;
+	font-size: 15px;
+	min-height: 18px;
+}
+
+window#waybar {
+	background: #181818;
+	border-radius: 0px;
+	opacity: 0.95;
+}
+
+window#waybar.empty {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 1;
+}
+
+#window {
+	margin: 5px 5px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+
+	font-family: sans-serif, Ubuntu Nerd Font;
+	
+}
+
+#waybar.empty #window {
+	background: none;
+}
+
+#workspaces {
+	
+	margin: 5px 0px 5px 5px;
+
+	padding-top: 1px;
+	padding-bottom: 1px;	
+	padding-left: 8px;
+	padding-right: 8px;
+	
+	border-radius: 25px;
+
+	background: #282828;
+	transition: none;
+}
+
+#workspaces button {
+	margin: 0px 2px;
+
+	padding-left: 2px;
+	padding-right: 2px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	/* background: #363636; */
+	background: transparent;
+	font-size: 16px;
+}
+
+#workspaces button.active {
+	/* color: #181818; */
+	/* background: #a1b56c; */
+}
+
+#tray {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;	
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	background: #282828;
+}
+
+#network {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	background: #363636;
+}
+
+#backlight {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+}
+
+#pulseaudio {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+}
+
+#temperature {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+}
+
+#battery {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	color: #f8f8f8;
+	background: #282828;
+	transition: none;
+}
+
+#battery.warning {
+}
+
+#battery.critical {
+}
+
+#cpu {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+}
+
+#memory {
+	
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 25px;
+	
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+}
+
+#language {
+	
+	margin: 5px 5px 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px; /*can't be 10 because sometimes big languages name not shown*/
+	padding-right: 10px; /*can't be 10 because sometimes big languages name not shown*/
+
+	border-radius: 25px;
+	
+	transition: none;
+	color: #f8f8f8;
+	background: #282828;
+}
+
+#clock {
+	
+	margin: 5px 4px 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-radius: 25px;
+
+	transition: none;
+	color: #f8f8f8;
+	/* background: #363636; */
+	background: #282828;
+}

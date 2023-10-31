@@ -1,0 +1,77 @@
+{
+	"layer": "top",
+	"position": "top",
+	"margin": "0 0 0 0",
+	"modules-left": [ "hyprland/workspaces", "hyprland/window"],
+	"modules-center": ["clock"],
+	"modules-right": ["tray", "battery" , "backlight", "pulseaudio", "hyprland/language"],
+
+	"hyprland/window": {
+    	"format": "{class}",
+    	"separate-outputs": true
+	},
+	"hyprland/workspaces": {
+		"all-outputs": false,
+		"active-only": false,
+		"format": "{icon}",
+		"format-icons": {
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+        	"*": 5
+       	},
+		"on-click": "activate"
+	},
+	"backlight": {
+	    "device": "intel_backlight",
+	    "format": "{icon} {percent}%",
+	    "format-icons": ["󰃞", "󰃠"]
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "󰖁",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	},
+	"temperature": {
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": [""]
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 5
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": "󰤥  {essid} {ipaddr}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"battery": {
+		"interval": 60,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": ["  ", "  ", "  ", "  ", "  "],
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"hyprland/language": {
+    	"format": "{short}{variant}",
+	},
+	"clock": {
+        "format": "{:%a %b %d, %H:%M}",
+        "tooltip": false
+    },
+}
