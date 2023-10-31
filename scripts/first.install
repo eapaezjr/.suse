@@ -19,6 +19,7 @@ sudo zypper install samba-client gvfs-fuse gvfs-backends
 
 sudo ln -s /usr/bin/rofi /usr/bin/dmenu
 
+echo "[Login]" | sudo tee --append /etc/systemd/logind.conf
 echo "HandlePowerKey=ignore" | sudo tee --append /etc/systemd/logind.conf
 sudo systemctl kill -s HUP systemd-logind
 
