@@ -13,13 +13,21 @@
 	"hyprland/workspaces": {
 		"all-outputs": false,
 		"active-only": false,
-		"format": "{icon}",
+		"format": "{name}",
 		"format-icons": {
-			"active": "",
-			"default": ""
+			"1": "󰬺",
+			"2": "󰬻",
+			"3": "󰬼",
+			"4": "󰬽",
+			"5": "󰬾",
+			"6": "󰬿",
+			"7": "󰭀",
+			"8": "󰭁",
+			"9": "󰭂",
+			"10": "󰿩"
 		},
 		"persistent-workspaces": {
-        	"*": 5
+        	"*": 5,
        	},
 		"on-click": "activate"
 	},

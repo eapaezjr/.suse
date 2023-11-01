@@ -70,7 +70,7 @@ window#waybar.hidden {
 
 #workspaces {
 	
-	margin: 5px 0px 5px 5px;
+	margin: 3px 0px 3px 5px;
 
 	padding-top: 1px;
 	padding-bottom: 1px;	
@@ -84,7 +84,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-	margin: 0px 2px;
+	margin: 0px 3px;
 
 	padding-left: 2px;
 	padding-right: 2px;
@@ -95,12 +95,18 @@ window#waybar.hidden {
 	color: #f8f8f8;
 	/* background: #363636; */
 	background: transparent;
-	font-size: 16px;
+}
+
+#workspaces button label {
+	font-family: Ubuntu Nerd Font;
+	font-weight: bold;
+	font-size: 17px;
 }
 
 #workspaces button.active {
 	/* color: #181818; */
 	/* background: #a1b56c; */
+	color: #a1b56c;
 }
 
 #tray {
